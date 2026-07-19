@@ -21,10 +21,10 @@ app.use('/api/auth' , authRouter);
 app.use('/api/cart' , cartRouter);
 
 
+module.exports = app;
 
 
-
-app.listen(process.env.PORT ,()=>{
-    console.log('connecting app');
+// app.listen(process.env.PORT ,()=>{
+//     console.log('connecting app');
     
-})
+// })
