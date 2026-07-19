@@ -13,7 +13,7 @@ connectDB();
 app.use(cors())
 app.use(express.json());
 
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
     res.status(200).json(responseToFront('done' , 200 ))   
 })
 app.use('/api/product' , productRouter);
