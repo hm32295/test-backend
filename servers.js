@@ -7,12 +7,15 @@ const connectDB = require("./config/db");
 const productRouter = require("./rout/product.routs");
 const authRouter = require("./rout/auth.rout");
 const cartRouter = require("./rout/cart.routes");
+const responseToFront = require("./helper/responseToFront");
 const app = express();
 connectDB();
 app.use(cors())
 app.use(express.json());
 
-
+app.use('/',(req,res)=>{
+    res.status(200).json(responseToFront('done' , 200 ))   
+})
 app.use('/api/product' , productRouter);
 app.use('/api/auth' , authRouter);
 app.use('/api/cart' , cartRouter);
